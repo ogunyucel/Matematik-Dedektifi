@@ -88,7 +88,7 @@
 
 <script>
     let currentLevel = 1; 
-    let correctAnswerText = ""; // Artık doğru cevap bir sayı değil, "5 x 4" gibi bir metin
+    let correctAnswerText = ""; 
     let score = 0;
     let correctCount = 0; 
     let wrongCount = 0;   
@@ -149,7 +149,7 @@
         if(fakeNum <= 0) fakeNum = 2; // Eğer sayı sıfıra düşerse 2 yap
         if(fakeNum === randomNum) fakeNum = randomNum + 1; // Güvenlik önlemi
         
-        // Yanlış şıkkın metni (Örn: "5 x 5")
+        // Yanlış şıkkın metni 
         let fakeAnswerText = `${currentLevel} x ${fakeNum}`;
 
         // Şıkları butonlara rastgele yerleştir
