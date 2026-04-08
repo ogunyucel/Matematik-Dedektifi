@@ -144,11 +144,16 @@
         // Doğru şıkkın metni (Örn: "5 x 4")
         correctAnswerText = `${currentLevel} x ${randomNum}`;
         
-        // Şaşırtma şıkkı oluşturuyoruz (doğru sayının 1 eksiği veya 1 fazlası)
-        let fakeNum = randomNum + (Math.random() > 0.5 ? 1 : -1);
-        if(fakeNum <= 0) fakeNum = 2; // Eğer sayı sıfıra düşerse 2 yap
-        if(fakeNum === randomNum) fakeNum = randomNum + 1; // Güvenlik önlemi
-        
+        // Yanlış çarpanı 1 ile 10 arasında tut ama doğrudan aynısı olmasın
+let fakeNum;
+if (randomNum === 10) {
+    fakeNum = 9; // Eğer soru 10 ise yanlış şık 9 olsun
+} else if (randomNum === 1) {
+    fakeNum = 2; // Eğer soru 1 ise yanlış şık 2 olsun
+} else {
+    // Diğer durumlarda rastgele 1 ekle veya çıkar
+    fakeNum = randomNum + (Math.random() > 0.5 ? 1 : -1);
+}
         // Yanlış şıkkın metni 
         let fakeAnswerText = `${currentLevel} x ${fakeNum}`;
 
